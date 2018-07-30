@@ -23,7 +23,9 @@ const homeSubtract1ButtonClickEvent = () => {
   console.log('button was clicked')
   const currentValue = parseInt(document.querySelector('.home-score').textContent)
   console.log(currentValue)
+  if(currentValue>0){
   document.querySelector('.home-score').textContent=currentValue - 1
+  }
 }
 
 const awayAdd1ButtonClickEvent = () => {
@@ -33,11 +35,14 @@ const awayAdd1ButtonClickEvent = () => {
   document.querySelector('.away-score').textContent=currentValue + 1
 }
 
+
 const awaySubtract1ButtonClickEvent = () => {
   console.log('button was clicked')
   const currentValue = parseInt(document.querySelector('.away-score').textContent)
   console.log(currentValue)
+  if(currentValue>0){
   document.querySelector('.away-score').textContent=currentValue - 1
+  }
 }
 
 document.querySelector('.home-team-name-button').addEventListener('click', homeTeamButtonClickEvent)
