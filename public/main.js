@@ -45,9 +45,22 @@ const awaySubtract1ButtonClickEvent = () => {
   }
 }
 
+const changePeriodClickEvent = () => {
+  console.log('button was clicked')
+  const currentValue = parseInt(document.querySelector('.period-number').textContent)
+  console.log(currentValue)
+  if(currentValue<2){
+    document.querySelector('.period-number').textContent=currentValue + 1
+  }
+  if(currentValue>1){
+    document.querySelector('.period-number').textContent=currentValue - 1
+  }
+}
+
 document.querySelector('.home-team-name-button').addEventListener('click', homeTeamButtonClickEvent)
 document.querySelector('.away-team-name-button').addEventListener('click', awayTeamButtonClickEvent)
 document.querySelector('.home-add-1-button').addEventListener('click', homeAdd1ButtonClickEvent)
 document.querySelector('.home-subtract-1-button').addEventListener('click', homeSubtract1ButtonClickEvent)
 document.querySelector('.away-add-1-button').addEventListener('click', awayAdd1ButtonClickEvent)
 document.querySelector('.away-subtract-1-button').addEventListener('click', awaySubtract1ButtonClickEvent)
+document.querySelector('.change-period-button').addEventListener('click', changePeriodClickEvent)
