@@ -90,3 +90,12 @@ p {
 .time-left p {
   font-size: 2em;
 }
+
+.time-left {
+  padding: 1em;
+}
+
+#time {
+  color: white;
+  font-size: 2em;
+}

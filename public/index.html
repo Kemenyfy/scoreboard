@@ -18,12 +18,12 @@
       </section>
       <section>
         <section class="change-team-name">
-          <p>Update Home Team Name</p>
+          <p>Home Team Name</p>
           <input class="home-team-name" type="text">
           <button class="home-team-name-button">Update</button>
         </section>
         <section class="change-team-score">
-          <p>Update Home Team Score</p>
+          <p>Home Team Score</p>
           <button class="home-add-1-button">Add 1</button>
           <button class="home-subtract-1-button">Subtract 1</button>
         </section>
@@ -37,7 +37,7 @@
       </section>
       <section class="time-left">
         <h6>Time Left</h6>
-        <p>0</p>
+        <span id="time">45:00</span>
       </section>
     </section>
     <section class="container">
@@ -47,12 +47,12 @@
       </section>
       <section>
         <section class="change-team-name">
-          <p>Update Away Team Name</p>
+          <p>Away Team Name</p>
           <input class="away-team-name" type="text">
           <button class="away-team-name-button">Update</button>
         </section>
         <section class="change-team-score">
-          <p>Update Away Team Score</p>
+          <p>Away Team Score</p>
           <button class="away-add-1-button">Add 1</button>
           <button class="away-subtract-1-button">Subtract 1</button>
         </section>
@@ -60,6 +60,26 @@
     </section>
   </section>
   <script src="/main.js" charset="utf-8"></script>
+  <script>
+  function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+  }
+  window.onload = function () {
+    let fortyfiveMinutes = 60 * 45,
+        display = document.querySelector('#time');
+    startTimer(fortyfiveMinutes, display);
+  }
+  </script>    
 </body>
 
 </html>
